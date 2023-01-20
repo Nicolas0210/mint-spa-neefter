@@ -1,14 +1,21 @@
-import React from 'react'
 import React, { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 
-export default function CreationForm (name, description, file) {
+export default function CreationForm () {
   const fileTypes = ["JPG", "PNG", "GIF"];
-
+  const [input, setInput] = useState({
+    name: "",
+    description: "",
+    viewFile: []
+  })
+  
+  //--drag and drop library//
   const [file, setFile] = useState(null);
   const handleChange = (file) => {
+    console.log(file)
     setFile(file);
   }
+  //----------------------//
   
 
   return(
